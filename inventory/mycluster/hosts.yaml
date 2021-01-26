@@ -12,6 +12,7 @@ all:
     kube-master:
       hosts:
         node1:
+        node2:
     kube-node:
       hosts:
         node1:

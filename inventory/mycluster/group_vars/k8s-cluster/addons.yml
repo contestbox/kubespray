@@ -85,7 +85,7 @@ rbd_provisioner_enabled: false
 
 # Nginx ingress controller deployment
 ingress_nginx_enabled: true
-# ingress_nginx_host_network: false
+ingress_nginx_host_network: false
 ingress_publish_status_address: ""
 # ingress_nginx_nodeselector:
 #   kubernetes.io/os: "linux"
@@ -125,14 +125,14 @@ cert_manager_enabled: false
 cert_manager_namespace: "cert-manager"
 
 # MetalLB deployment
-metallb_enabled: false
-# metallb_ip_range:
-#   - "192.168.0.200-192.168.0.230"
-# metallb_version: v0.9.3
-# metallb_protocol: "layer2"
-# metallb_port: "7472"
-# metallb_limits_cpu: "100m"
-# metallb_limits_mem: "100Mi"
+metallb_enabled: true
+metallb_ip_range:
+  - "192.168.0.200-192.168.0.230"
+metallb_version: v0.9.3
+metallb_protocol: "layer2"
+metallb_port: "7472"
+metallb_limits_cpu: "100m"
+metallb_limits_mem: "100Mi"
 # metallb_additional_address_pools:
 #   kube_service_pool:
 #     ip_range:
