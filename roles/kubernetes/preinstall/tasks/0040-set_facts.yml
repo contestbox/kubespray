@@ -113,14 +113,10 @@
 
 - name: generate search domains to resolvconf
   set_fact:
-    searchentries:
-      search {{ ([ 'default.svc.' + dns_domain, 'svc.' + dns_domain ] + searchdomains|default([])) | join(' ') }}
-    domainentry:
-      domain {{ dns_domain }}
-    supersede_search:
-      supersede domain-search "{{ ([ 'default.svc.' + dns_domain, 'svc.' + dns_domain ] + searchdomains|default([])) | join('", "') }}";
-    supersede_domain:
-      supersede domain-name "{{ dns_domain }}";
+    searchentries: search {{ ([ 'default.svc.' + dns_domain, 'svc.' + dns_domain ] + searchdomains|default([])) | join(' ') }}
+    domainentry: domain {{ dns_domain }}
+    supersede_search: supersede domain-search "{{ ([ 'default.svc.' + dns_domain, 'svc.' + dns_domain ] + searchdomains|default([])) | join('", "') }}";
+    supersede_domain: supersede domain-name "{{ dns_domain }}";
 
 - name: pick coredns cluster IP or default resolver
   set_fact:
@@ -139,10 +135,8 @@
 
 - name: generate nameservers to resolvconf
   set_fact:
-    nameserverentries:
-      nameserver {{ ( coredns_server|d([]) + nameservers|d([]) + cloud_resolver|d([])) | unique | join(',nameserver ') }}
-    supersede_nameserver:
-      supersede domain-name-servers {{ ( coredns_server|d([]) + nameservers|d([]) + cloud_resolver|d([])) | unique | join(', ') }};
+    nameserverentries: nameserver {{ ( coredns_server|d([]) + nameservers|d([]) + cloud_resolver|d([])) | unique | join(',nameserver ') }}
+    supersede_nameserver: supersede domain-name-servers {{ ( coredns_server|d([]) + nameservers|d([]) + cloud_resolver|d([])) | unique | join(', ') }};
 
 - name: gather os specific variables
   include_vars: "{{ item }}"
@@ -171,8 +165,3 @@
   stat:
     path: "/usr"
   register: usr
-
-- name: set alternate flexvolume path
-  set_fact:
-    kubelet_flexvolumes_plugins_dir: /var/lib/kubelet/volumeplugins
-  when: not usr.stat.writeable

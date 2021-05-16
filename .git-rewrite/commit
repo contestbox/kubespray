@@ -1,0 +1,20 @@
+tree 5722ea95cd76c6c46b1243f0a48684d36c6bbe99
+parent 6291881943088f2bbe62064f896224ad524955a5
+parent d3850a4da5693c2be13a1c1ea81308de96dedab6
+author Brad Beam <bradbeam@users.noreply.github.com> 1513092531 -0600
+committer GitHub <noreply@github.com> 1513092531 -0600
+gpgsig -----BEGIN PGP SIGNATURE-----
+ 
+ wsBcBAABCAAQBQJaL/WzCRBK7hj4Ov3rIwAAdHIIAC0hPffkHeHzAshzZ4j4X7ll
+ t0FDKK0/6CHGr6i0EbmjJP9OvJ853wuGwNAqnhqoepPyvsLczMiBzYLUv+1smXJR
+ Lz9cTyxl08ds8BIwxfnVWINd2uD34j+mEvdidcN1Owe/S5zx3XtDufkBkOPDaLGV
+ 8+V6wGCq52I/MrJCv7gULS730mULFNhpjbY8z8zCArarNlv87F+3S6b/mkNiAKgC
+ B6kRbCmS2UM66slkIGkMIjzIm2GGfm0in+FCUFrv93GGMRbl1OCUtjOJl0rGV9x8
+ mPbQqLevt+wQSSz9a8EFt2DQP5rhDKuZfXLgyNZ+iP7EQwyJQ1/Tb/mxVigJPeg=
+ =Y30o
+ -----END PGP SIGNATURE-----
+ 
+
+Merge pull request #2059 from bradbeam/vaultalt
+
+Fixing alt_names for vault cert generation
